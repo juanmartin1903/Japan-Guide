@@ -1,10 +1,10 @@
 ﻿import {
   CalendarDays,
+  CheckCircle2,
   Hotel,
   MapPin,
   Plane,
   WalletCards,
-  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -75,6 +75,7 @@ export default function Dashboard() {
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => {
           const Icon = card.icon;
+
           return (
             <article
               key={card.title}

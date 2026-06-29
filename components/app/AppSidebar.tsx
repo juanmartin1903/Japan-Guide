@@ -1,5 +1,6 @@
 ﻿import {
   CalendarDays,
+  CheckSquare,
   Heart,
   Home,
   Hotel,
@@ -10,7 +11,6 @@
   Soup,
   Star,
   WalletCards,
-  CheckSquare,
 } from "lucide-react";
 
 const navItems = [
@@ -40,6 +40,7 @@ export default function AppSidebar() {
       <nav className="space-y-1">
         {navItems.map((item) => {
           const Icon = item.icon;
+
           return (
             <button
               key={item.name}
