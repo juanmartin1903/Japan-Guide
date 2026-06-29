@@ -6,43 +6,55 @@
   Plane,
   WalletCards,
 } from "lucide-react";
+import { differenceInCalendarDays } from "date-fns";
 import { Button } from "@/components/ui/button";
+import { trip } from "@/data/trip";
+
+const today = new Date();
+const tripStart = new Date(`${trip.dates.start}T00:00:00`);
+const daysUntilTrip = Math.max(
+  0,
+  differenceInCalendarDays(tripStart, today)
+);
+
+const firstFlight = trip.flights[0];
+const firstCity = trip.cities[0];
 
 const cards = [
   {
     title: "Cuenta atrás",
-    value: "35 días",
-    description: "Salida desde Estocolmo el 3 de agosto de 2026",
+    value: `${daysUntilTrip} días`,
+    description: "Hasta la salida desde Estocolmo",
     icon: CalendarDays,
   },
   {
     title: "Próximo vuelo",
-    value: "ARN → PEK → KIX",
-    description: "Air China · llegada a Osaka Kansai",
+    value: `${firstFlight.from} → ${firstFlight.to}`,
+    description: `${firstFlight.airline} · ${firstFlight.flightNumber}`,
     icon: Plane,
   },
   {
     title: "Primera ciudad",
-    value: "Osaka",
-    description: "4–8 agosto · primera base del viaje",
+    value: firstCity.name,
+    description: `${firstCity.dates} · ${firstCity.role}`,
     icon: MapPin,
   },
   {
     title: "Alojamiento",
     value: "Osaka Airbnb",
-    description: "Check-in después de la llegada a KIX",
+    description: "Primera estancia confirmada",
     icon: Hotel,
   },
   {
     title: "Presupuesto",
     value: "Pendiente",
-    description: "Próximamente: JPY, SEK y categorías",
+    description: "JPY, SEK y categorías en próximo módulo",
     icon: WalletCards,
   },
   {
     title: "Checklist",
-    value: "Preparación",
-    description: "Pasaporte, seguro, dinero, adaptadores y medicinas",
+    value: `${trip.checklist.length} básicos`,
+    description: "Preparación esencial antes del viaje",
     icon: CheckCircle2,
   },
 ];
@@ -53,7 +65,7 @@ export default function Dashboard() {
       <section className="overflow-hidden rounded-3xl border bg-gradient-to-br from-background via-background to-muted p-8 shadow-sm">
         <div className="max-w-3xl">
           <p className="mb-3 text-sm font-medium text-muted-foreground">
-            Guía interactiva personalizada
+            {trip.subtitle}
           </p>
           <h2 className="text-4xl font-bold tracking-tight lg:text-6xl">
             Japón 2026
@@ -92,6 +104,30 @@ export default function Dashboard() {
             </article>
           );
         })}
+      </section>
+
+      <section className="rounded-3xl border bg-card p-6 shadow-sm">
+        <div className="mb-5 flex items-center justify-between">
+          <div>
+            <p className="text-sm text-muted-foreground">Ruta principal</p>
+            <h3 className="text-2xl font-semibold">Ciudades del viaje</h3>
+          </div>
+        </div>
+
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {trip.cities.map((city) => (
+            <div
+              key={city.id}
+              className="rounded-2xl border bg-background p-4"
+            >
+              <p className="text-sm text-muted-foreground">{city.dates}</p>
+              <h4 className="mt-1 text-lg font-semibold">{city.name}</h4>
+              <p className="mt-2 text-sm text-muted-foreground">
+                {city.role}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

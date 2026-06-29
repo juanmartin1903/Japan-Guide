@@ -1,0 +1,83 @@
+﻿export const trip = {
+  title: "Japan Guide",
+  subtitle: "Luna de Miel 2026",
+  dates: {
+    start: "2026-08-03",
+    end: "2026-08-31",
+  },
+  flights: [
+    {
+      id: "flight-ca912",
+      airline: "Air China",
+      flightNumber: "CA912",
+      from: "Stockholm ARN",
+      to: "Beijing PEK",
+      departure: "2026-08-03T19:10:00",
+      arrival: "2026-08-04T09:40:00",
+    },
+    {
+      id: "flight-ca161",
+      airline: "Air China",
+      flightNumber: "CA161",
+      from: "Beijing PEK",
+      to: "Osaka KIX",
+      departure: "2026-08-04T16:30:00",
+      arrival: "2026-08-04T20:30:00",
+    },
+    {
+      id: "flight-ca162",
+      airline: "Air China",
+      flightNumber: "CA162",
+      from: "Osaka KIX",
+      to: "Beijing PEK",
+      departure: "2026-08-31T09:05:00",
+      arrival: "2026-08-31T12:25:00",
+    },
+  ],
+  cities: [
+    {
+      id: "osaka-1",
+      name: "Osaka",
+      dates: "4–8 agosto",
+      role: "Primera base del viaje",
+    },
+    {
+      id: "kyoto",
+      name: "Kyoto",
+      dates: "8–13 agosto",
+      role: "Templos, tradición y paseos clásicos",
+    },
+    {
+      id: "kanazawa",
+      name: "Kanazawa",
+      dates: "13–16 agosto",
+      role: "Jardines, barrios históricos y cultura",
+    },
+    {
+      id: "tokyo",
+      name: "Tokyo",
+      dates: "17–21 agosto",
+      role: "Gran ciudad, compras y experiencias urbanas",
+    },
+    {
+      id: "nagoya",
+      name: "Nagoya",
+      dates: "21–24 agosto",
+      role: "Base intermedia y excursiones",
+    },
+    {
+      id: "osaka-2",
+      name: "Osaka",
+      dates: "24–31 agosto",
+      role: "Última base antes del regreso",
+    },
+  ],
+  checklist: [
+    "Pasaporte",
+    "Seguro de viaje",
+    "Tarjetas y efectivo",
+    "Adaptadores",
+    "Medicinas y vitaminas",
+    "Reservas principales",
+  ],
+} as const;
