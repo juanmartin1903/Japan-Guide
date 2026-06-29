@@ -9,6 +9,7 @@
 import { differenceInCalendarDays } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { trip } from "@/data/trip";
+import CitiesOverview from "@/components/app/CitiesOverview";
 
 const today = new Date();
 const tripStart = new Date(`${trip.dates.start}T00:00:00`);
@@ -106,29 +107,7 @@ export default function Dashboard() {
         })}
       </section>
 
-      <section className="rounded-3xl border bg-card p-6 shadow-sm">
-        <div className="mb-5 flex items-center justify-between">
-          <div>
-            <p className="text-sm text-muted-foreground">Ruta principal</p>
-            <h3 className="text-2xl font-semibold">Ciudades del viaje</h3>
-          </div>
-        </div>
-
-        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-          {trip.cities.map((city) => (
-            <div
-              key={city.id}
-              className="rounded-2xl border bg-background p-4"
-            >
-              <p className="text-sm text-muted-foreground">{city.dates}</p>
-              <h4 className="mt-1 text-lg font-semibold">{city.name}</h4>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {city.role}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <CitiesOverview />
     </div>
   );
 }
