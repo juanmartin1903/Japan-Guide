@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { trip } from "@/data/trip";
 import CitiesOverview from "@/components/app/CitiesOverview";
 import StaysOverview from "@/components/app/StaysOverview";
+import FlightsOverview from "@/components/app/FlightsOverview";
 
 const today = new Date();
 const tripStart = new Date(`${trip.dates.start}T00:00:00`);
@@ -108,6 +109,7 @@ export default function Dashboard() {
         })}
       </section>
 
+      <FlightsOverview />
       <CitiesOverview />
       <StaysOverview />
     </div>
