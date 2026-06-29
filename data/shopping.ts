@@ -1,0 +1,42 @@
+﻿export const shopping = [
+  {
+    id: "don-quijote",
+    name: "Don Quijote",
+    category: "General",
+    cities: ["Osaka", "Tokyo", "Nagoya"],
+    priority: "Alta",
+    notes: "Souvenirs, snacks, productos curiosos, regalos y compras de última hora.",
+  },
+  {
+    id: "pokemon-center",
+    name: "Pokémon Center",
+    category: "Anime / Juegos",
+    cities: ["Osaka", "Kyoto", "Tokyo"],
+    priority: "Alta",
+    notes: "Merchandising oficial, regalos y recuerdos especiales.",
+  },
+  {
+    id: "nintendo-store",
+    name: "Nintendo Store",
+    category: "Juegos",
+    cities: ["Osaka", "Tokyo"],
+    priority: "Alta",
+    notes: "Productos oficiales Nintendo, juegos, accesorios y regalos.",
+  },
+  {
+    id: "uniqlo",
+    name: "Uniqlo",
+    category: "Ropa",
+    cities: ["Osaka", "Kyoto", "Tokyo", "Nagoya"],
+    priority: "Media",
+    notes: "Ropa cómoda, camisetas UT, básicos y posibles compras prácticas para el viaje.",
+  },
+  {
+    id: "bic-camera",
+    name: "Bic Camera / Yodobashi",
+    category: "Electrónica",
+    cities: ["Osaka", "Tokyo", "Nagoya"],
+    priority: "Media",
+    notes: "Electrónica, accesorios, cámaras, periféricos y tax free.",
+  },
+] as const;
