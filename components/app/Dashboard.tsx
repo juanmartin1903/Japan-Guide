@@ -9,10 +9,12 @@
 import { differenceInCalendarDays } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { trip } from "@/data/trip";
+import { budget } from "@/data/budget";
 import CitiesOverview from "@/components/app/CitiesOverview";
 import StaysOverview from "@/components/app/StaysOverview";
 import FlightsOverview from "@/components/app/FlightsOverview";
 import ChecklistOverview from "@/components/app/ChecklistOverview";
+import BudgetOverview from "@/components/app/BudgetOverview";
 
 const today = new Date();
 const tripStart = new Date(`${trip.dates.start}T00:00:00`);
@@ -23,6 +25,10 @@ const daysUntilTrip = Math.max(
 
 const firstFlight = trip.flights[0];
 const firstCity = trip.cities[0];
+const totalBudgetJPY = budget.categories.reduce(
+  (sum, category) => sum + category.estimatedJPY,
+  0
+);
 
 const cards = [
   {
@@ -51,8 +57,8 @@ const cards = [
   },
   {
     title: "Presupuesto",
-    value: "Pendiente",
-    description: "JPY, SEK y categorías en próximo módulo",
+    value: `${totalBudgetJPY.toLocaleString("ja-JP")} ¥`,
+    description: "Estimación inicial por categorías",
     icon: WalletCards,
   },
   {
@@ -111,6 +117,7 @@ export default function Dashboard() {
       </section>
 
       <FlightsOverview />
+      <BudgetOverview />
       <ChecklistOverview />
       <CitiesOverview />
       <StaysOverview />
