@@ -17,6 +17,7 @@ import ChecklistOverview from "@/components/app/ChecklistOverview";
 import BudgetOverview from "@/components/app/BudgetOverview";
 import ShoppingOverview from "@/components/app/ShoppingOverview";
 import RestaurantsOverview from "@/components/app/RestaurantsOverview";
+import TransportOverview from "@/components/app/TransportOverview";
 
 const today = new Date();
 const tripStart = new Date(`${trip.dates.start}T00:00:00`);
@@ -119,6 +120,7 @@ export default function Dashboard() {
       </section>
 
       <FlightsOverview />
+      <TransportOverview />
       <BudgetOverview />
       <ChecklistOverview />
       <RestaurantsOverview />
