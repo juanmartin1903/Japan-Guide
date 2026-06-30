@@ -24,6 +24,7 @@ const navItems = [
   { name: "Transporte", href: "/transporte", icon: TrainFront },
   { name: "Alojamientos", href: "/alojamientos", icon: Hotel },
   { name: "Ciudades", href: "/ciudades", icon: Map },
+  { name: "Osaka", href: "/ciudades/osaka", icon: Map },
   { name: "Restaurantes", href: "/restaurantes", icon: Soup },
   { name: "Compras", href: "/compras", icon: ShoppingBag },
   { name: "Presupuesto", href: "/presupuesto", icon: WalletCards },
