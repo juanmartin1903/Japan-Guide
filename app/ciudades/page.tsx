@@ -1,10 +1,11 @@
 ﻿import AppLayout from "@/components/app/AppLayout";
-import CitiesOverview from "@/components/app/CitiesOverview";
+import CityDetailPage from "@/components/app/CityDetailPage";
+import { tokyo } from "@/data/cities/tokyo/overview";
 
-export default function CiudadesPage() {
+export default function TokyoPage() {
   return (
     <AppLayout>
-      <CitiesOverview />
+      <CityDetailPage city={tokyo} />
     </AppLayout>
   );
 }
