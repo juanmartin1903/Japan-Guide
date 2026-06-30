@@ -40,6 +40,9 @@ Estado: Base funcional creada
 - Módulo de compras
 - Módulo de ciudades
 - Módulo de alojamientos
+- Navegación real con rutas
+- Página detalle de Osaka
+- Ruta /ciudades/osaka
 
 ## Decisiones importantes
 
@@ -52,19 +55,15 @@ Estado: Base funcional creada
 
 ## Próximo sprint
 
-Crear rutas reales:
+## Próximo sprint
 
-- /
-- /vuelos
-- /transporte
-- /alojamientos
-- /ciudades
-- /restaurantes
-- /compras
-- /presupuesto
-- /checklist
-- /documentos
-- /emergencias
+Crear la plantilla reutilizable de ciudad y preparar páginas para:
+
+- Kyoto
+- Kanazawa
+- Tokyo
+- Nagoya
+- Osaka final
 
 ## Pendiente crítico
 
